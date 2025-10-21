@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Servicios - Cuidado Vital CR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Servicios médicos especializados en Costa Rica - Cuidado Vital CR">
+        <!-- Se importan los links siempre para usar herramientas y diseños de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Se agrega el estilo del html mediante un style con CSS-->
+        <style> 
+            :root {
+                --primary-color: #2c80b9;
+                --secondary-color: #f8f9fa;
+                --accent-color: #28a745;
+                --text-color: #333;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+                padding-top: 76px; /* Para compensar la navbar fija */
+            }
+
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            header {
+                background: linear-gradient(135deg, var(--primary-color), #1a5a8a);
+                padding: 3rem 0 !important;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                margin-bottom: 20px;
+                height: 100%;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card-header {
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .service-icon {
+                font-size: 3rem;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+                text-align: center;
+                display: block;
+            }
+
+            .service-img {
+                height: 200px;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+            }
+
+            .footer {
+                background-color: #343a40;
+                color: white;
+                padding: 40px 0;
+                margin-top: 50px;
+            }
+
+            .footer a {
+                color: #ddd;
+            }
+
+            .footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            .benefit-item {
+                margin-bottom: 15px;
+                padding-left: 30px;
+                position: relative;
+            }
+
+            .benefit-item i {
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: var(--primary-color);
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 3rem;
+                position: relative;
+                padding-bottom: 15px;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 3px;
+                background-color: var(--primary-color);
+            }
+
+            .service-highlight {
+                background-color: rgba(44, 128, 185, 0.05);
+                border-radius: 10px;
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            @media (max-width: 768px) {
+                header h1 {
+                    font-size: 1.8rem;
+                }
+
+                .service-img {
+                    height: 150px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar: Mantenemos el estilo predeterminado de la pagina en cada ventana y sus herramientas-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heartbeat mr-2"></i>Cuidado Vital CR
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informacion.html">Información Médica</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos Profesionales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado: titulo principal -->
+        <header class="bg-primary text-white text-center py-4">
+            <div class="container">
+                <h1 class="display-4">Nuestros Servicios Medicos</h1>
+                <p class="lead">Atención especializada y cuidados integrales para su salud</p>
+                <a href="#servicios-principales" class="btn btn-light btn-lg mt-3">Conocer Nuestros Servicios</a>
+            </div>
+        </header>
+
+        <!-- Introducción de la pagina: diseño generar y orden -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="section-title"><strong>Comprometidos con su bienestar</strong></h2>
+                        <p>En Cuidado Vital CR ofrecemos una amplia gama de servicios médicos diseñados para brindar atención integral a nuestros pacientes. Nuestro equipo de profesionales altamente capacitados trabaja con estándares de calidad internacional para garantizar los mejores resultados en su salud.</p>
+                        <p>Contamos con tecnología de vanguardia y protocolos actualizados para el diagnóstico, tratamiento y seguimiento de diversas condiciones médicas, siempre con un enfoque humano y personalizado.</p>
+                        <div class="service-highlight">
+                            <h4><i class="fas fa-star mr-2"></i>Servicios Destacados:</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li class="benefit-item"><i class="fas fa-check-circle mr-2"></i>Atención de emergencias 24/7</li>
+                                <li class="benefit-item"><i class="fas fa-check-circle mr-2"></i>Consultas especializadas</li>
+                                <li class="benefit-item"><i class="fas fa-check-circle mr-2"></i>Hospitalización con comodidad</li>
+                                <li class="benefit-item"><i class="fas fa-check-circle mr-2"></i>Servicios de traslado médico de emergencias</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <!-- Se contiene la imagen-->
+                    <div class="col-md-6">
+                        <img src="habitacion.jpg" alt="Instalaciones médicas" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Principales: Seccion de la pagina -->
+        <section id="servicios-principales" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title"><strong>Servicios Principales</strong></h2>
+                <div class="row">
+                    <!-- Servicio 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-procedures service-icon"></i>
+                                <h4>Hospitalizacion:</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="centroMedico.jpg" alt="Habitación de hospitalización" class="service-img rounded mb-3">
+                                <p><b>Contamos con habitaciones diseñadas para su comodidad y recuperación, equipadas con tecnología médica avanzada y atención las 24 horas.</b></p>
+                                <br>
+                                <ul>
+                                    <li><i>Habitaciones individuales y compartidas</i></li>
+                                    <li><i>Monitoreo constante de signos vitales</i></li>
+                                    <li><i>Atención de enfermería especializada</i></li>
+                                    <li><i>Servicio de alimentación terapéutica</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-ambulance service-icon"></i>
+                                <h4>Traslados Medicos:</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="trasladoMedico.jpg" alt="Servicio de traslado médico" class="service-img rounded mb-3">
+                                <p><b>Servicio de ambulancia equipada para emergencias y traslados programados, con personal paramédico capacitado y equipamiento de soporte vital.</b></p>
+                                <br>
+                                <ul>
+                                    <li><i>Traslados de emergencia 24/7</i></li>
+                                    <li><i>Transporte interhospitalario</i></li>
+                                    <li><i>Ambulancias UCI móviles</i></li>
+                                    <li><i>Asistencia a domicilio</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fas fa-user-md service-icon"></i>
+                                <h4>Consultas Especializadas:</h4>
+                            </div>
+                             <!-- Se contiene la imagen -->
+                            <div class="card-body">
+                                <img src="atencion.jpg" alt="Consulta médica especializada" class="service-img rounded mb-3">
+                                <p><b>Atención médica especializada en diversas áreas con profesionales certificados y experiencia comprobada en el diagnóstico y tratamiento.</b></p>
+                                <br>
+                                <ul>
+                                    <li><i>Cardiología</i></li>
+                                    <li><i>Neurología</i></li>
+                                    <li><i>Pediatría</i></li>
+                                    <li><i>Ginecología y Obstetricia</i></li>
+                                    <li><i>Ortopedia y Traumatología</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Adicionales: Seccion adicional de contenido dentro de la pagina -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">Servicios Adicionales</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-flask service-icon"></i>Laboratorio Clínico:</h4>
+                                <br>
+                                <p><b>Análisis clínicos completos con tecnología de punta y resultados confiables en el menor tiempo posible.</b></p>
+                                <ul>
+                                    <li><i>Hematología completa</i></li>
+                                    <li><i>Química sanguínea</i></li>
+                                    <li><i>Microbiología</i></li>
+                                    <li><i>Pruebas especializadas</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-x-ray service-icon"></i>Imagenología:</h4>
+                                <br>
+                                <p><b>Estudios diagnósticos por imagen con equipos de última generación para una precisión superior.</b></p>
+                                <ul>
+                                    <li><i>Rayos X digital</i></li>
+                                    <li><i>Ultrasonido</i></li>
+                                    <li><i>Tomografía computarizada</i></li>
+                                    <li><i>Resonancia magnética</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-heartbeat service-icon"></i>Rehabilitación:</h4>
+                                <br>
+                                <p><b>Programas de terapia física y rehabilitación personalizados para recuperar la funcionalidad y calidad de vida.</b></p>
+                                <ul>
+                                    <li><i>Fisioterapia</i></li>
+                                    <li><i>Terapia ocupacional</i></li>
+                                    <li><i>Terapia respiratoria</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-notes-medical service-icon"></i>Medicina Preventiva:</h4>
+                                <br>
+                                <p><b>Programas diseñados para mantener su salud y prevenir enfermedades mediante chequeos regulares y educación.</b></p>
+                                <ul>
+                                    <li><i>Chequeos ejecutivos</i></li>
+                                    <li><i>Vacunación</i></li>
+                                    <li><i>Medicina del trabajo</i></li>
+                                    <li><i>Programacion de servicios y agendas de facil acceso</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Informacion de contacto y autenticidad de la pagina -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cuidado Vital CR:</h5>
+                        <p>Información médica confiable para profesionales de la salud y pacientes en Costa Rica.</p>
+                        <p>Síguenos en:</p>
+                        <div>
+                            <a href="#" class="mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Enlaces Rápidos:</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">Información Médica</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="consejos.html">Consejos Profesionales</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacto:</h5>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> Alajuela, Costa Rica</p>
+                            <p><i class="fas fa-phone mr-2"></i> +506 2222-2222</p>
+                            <p><i class="fas fa-envelope mr-2"></i> sebas@cuidadovitalcr.com</p>
+                        </address>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">
+                    <p>&copy; 2025 Cuidado Vital CR. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+         <!-- Exportar los scripts de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

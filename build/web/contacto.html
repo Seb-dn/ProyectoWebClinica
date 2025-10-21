@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario de Contacto - Cuidado Vital CR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Exportamos las herramientas de bootstrap y CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Se mantiene la paleta de colores con el estilo CSS-->
+        <style>
+            :root {
+                --primary-color: #2c80b9;
+                --secondary-color: #f8f9fa;
+                --accent-color: #28a745;
+                --text-color: #333;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+                padding-top: 76px;
+                background-color: #f8f9fa;
+            }
+
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            header {
+                background: linear-gradient(135deg, var(--primary-color), #1a5a8a);
+                padding: 2rem 0 !important;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+            }
+
+            .footer {
+                background-color: #343a40;
+                color: white;
+                padding: 40px 0;
+                margin-top: 50px;
+            }
+
+            .footer a {
+                color: #ddd;
+            }
+
+            .footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            .form-container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .required-field::after {
+                content: " *";
+                color: #dc3545;
+            }
+
+            .btn-primary {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+            }
+
+            .btn-primary:hover {
+                background-color: #1a5a8a;
+                border-color: #1a5a8a;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heartbeat mr-2"></i>Cuidado Vital CR
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informacion.html">Información Médica</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos Profesionales</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado -->
+        <header class="bg-primary text-white text-center py-4">
+            <div class="container">
+                <h1 class="display-4">Formulario de Contacto</h1>
+                <p class="lead">Estamos aquí para responder sus preguntas y consultas</p>
+            </div>
+        </header>
+
+        <!-- Formulario de Contacto -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white text-center">
+                                <h4 class="mb-0"><i class="fas fa-envelope mr-2"></i>Contactenos:</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="contactForm" action="ContactoServlet" method="POST" novalidate>
+                                    <div class="form-group">
+                                        <label for="nombre" class="required-field">Nombre Completo:</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese su nombre completo.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="required-field">Correo Electronico:</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese un correo electrónico válido...
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono (Opcional):</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mensaje" class="required-field">Mensaje</label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese su mensaje.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="privacidad" required>
+                                        <label class="form-check-label" for="privacidad">
+                                            Acepto la política de privacidad y el tratamiento de mis datos
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Debe aceptar la política de privacidad para continuar.
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Contacto Adicional -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                                <h5>Telefono:</h5>
+                                <p><b>+506 2222-2222</b></p>
+                                <small><b>Lunes a Viernes: 7:00 am - 7:00 pm</b></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                                <h5>Email:</h5>
+                                <br>
+                                <p><b>sebas@cuidadovitalcr.com</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                                <h5>Direccion:</h5>
+                                <br>
+                                <p><b>Alajuela, Costa Rica</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Pie de pagina web, muestra informacion de derechos de autor y señala contactos directos -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cuidado Vital CR:</h5>
+                        <p>Información médica confiable para profesionales de la salud y pacientes en Costa Rica.</p>
+                        <p>Síguenos en:</p>
+                        <div>  <!-- Trae iconos de redes sociales de ejemplo: -->
+                            <a href="#" class="mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Enlaces Rápidos:</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">Información Médica</a></li>
+                            <li><a href="formulario.html">Servicios</a></li>
+                            <li><a href="articulos.html">Consejos Profecionales</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacto:</h5>
+                        <address>  <!-- Informacion ficticia para ejemplificar la funcionalidad de la pagina: -->
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> Aluejuela, Costa Rica</p>
+                            <p><i class="fas fa-phone mr-2"></i> +506 2222-2222</p>
+                            <p><i class="fas fa-envelope mr-2"></i> sebas@cuidadovitalcr.com</p>
+                        </address>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">  <!-- Legitima legalmente la pagina para evitar plagios: -->
+                    <p>&copy; 2025 Cuidado Vital CR. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Importacion de scripts de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Captura posibles errores dentro del formulario: -->
+        <script>
+            // Validación del formulario
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    var form = document.getElementById('contactForm');
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                }, false);
+            })();
+
+            // El envío real lo maneja el servlet, así que removemos la alerta
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                // El formulario se enviará automáticamente al servlet
+                // No necesitamos preventDefault() porque queremos que se envíe
+            });
+        </script>
+    </body>
+</html>

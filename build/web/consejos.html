@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Consejos Profesionales - Cuidado Vital CR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Consejos y artículos para profesionales de la salud - Cuidado Vital CR">
+        <!-- Exportar los links de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Agregar el estilo de CSS para la pagina -->
+        <style>
+            :root {
+                --primary-color: #2c80b9;
+                --secondary-color: #f8f9fa;
+                --accent-color: #28a745;
+                --text-color: #333;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+                padding-top: 76px;
+            }
+
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            header {
+                background: linear-gradient(135deg, var(--primary-color), #1a5a8a);
+                padding: 3rem 0 !important;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                margin-bottom: 20px;
+                height: 100%;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card-header {
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: bold;
+            }
+
+            .advice-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+                text-align: center;
+                display: block;
+            }
+
+            .footer {
+                background-color: #343a40;
+                color: white;
+                padding: 40px 0;
+                margin-top: 50px;
+            }
+
+            .footer a {
+                color: #ddd;
+            }
+
+            .footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 3rem;
+                position: relative;
+                padding-bottom: 15px;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 3px;
+                background-color: var(--primary-color);
+            }
+
+            .tip-box {
+                background-color: rgba(44, 128, 185, 0.05);
+                border-left: 4px solid var(--primary-color);
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            @media (max-width: 768px) {
+                header h1 {
+                    font-size: 1.8rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar: Se mantiene el diseño original de la pagina -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heartbeat mr-2"></i>Cuidado Vital CR
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informacion.html">Información Médica</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="consejos.html">Consejos Profesionales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado: Seccion inicial -->
+        <header class="bg-primary text-white text-center py-4">
+            <div class="container">
+                <h1 class="display-4">Consejos Profesionales</h1>
+                <p class="lead">Las mejores guias y recomendaciones para el campo de la medicina mediante la etica y la ciencia</p>
+            </div>
+        </header>
+
+        <br>
+        <!-- Primera sección: Imagen principal -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <img src="etica.jpg" alt="Procedimiento médico" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejos Principales: -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">Consejos Esenciales para Profesionales de la Salud</h2>
+
+                <div class="row">
+                    <!-- Consejo 1: -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-hand-holding-heart advice-icon"></i>
+                                <h4>Comunicación Efectiva con Pacientes:</h4>
+                                <br>
+                                <p><b>Establecer una comunicación clara y empática es fundamental para el éxito del tratamiento y la satisfacción del paciente.</b></p>
+                                <div class="tip-box">
+                                    <strong>Recomendaciones:</strong>
+                                    <ul class="mt-2">
+                                        <li><i>Usar lenguaje claro y evitar tecnicismos innecesarios</i></li>
+                                        <li><i>Escuchar activamente las preocupaciones del paciente</i></li>
+                                        <li><i>Validar emociones y mostrar empatía</i></li>
+                                        <li><i>Confirmar comprensión mediante preguntas</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consejo 2: -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-shield-alt advice-icon"></i>
+                                <h4>Bioseguridad en la Práctica Médica:</h4>
+                                <br>
+                                <p><b>Mantener protocolos de bioseguridad rigurosos protege tanto al personal de salud como a los pacientes.</b></p>
+                                <div class="tip-box">
+                                    <strong>Protocolos Esenciales:</strong>
+                                    <ul class="mt-2">
+                                        <li><i>Lavado de manos antes y después de cada paciente</i></li>
+                                        <li><i>Uso correcto de equipo de protección personal</i></li>
+                                        <li><i>Esterilización adecuada de instrumentos</i></li>
+                                        <li><i>Manejo seguro de desechos médicos</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <!-- Consejo 3: -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-file-medical advice-icon"></i>
+                                <h4>Documentación Médica Precisa:</h4>
+                                <br>
+                                <p><b>La documentación completa y precisa es crucial para la continuidad del cuidado y protección legal.</b></p>
+                                <div class="tip-box">
+                                    <strong>Mejores Prácticas:</strong>
+                                    <ul class="mt-2">
+                                        <li><i>Registrar información de manera oportuna</i></li>
+                                        <li><i>Ser específico y objetivo en las anotaciones</i></li>
+                                        <li><i>Incluir fechas y firmas en todos los documentos</i></li>
+                                        <li><i>Mantener la confidencialidad de los registros</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consejo 4 -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-balance-scale advice-icon"></i>
+                                <h4>Ética y Profesionalismo:</h4>
+                                <br>
+                                <p><b>Mantener los más altos estándares éticos es fundamental para la práctica médica responsable.</b></p>
+                                <div class="tip-box">
+                                    <strong>Principios Éticos:</strong>
+                                    <ul class="mt-2">
+                                        <li><i>Respetar la autonomía del paciente</i></li>
+                                        <li><i>Actuar en beneficio del paciente (beneficencia)</i></li>
+                                        <li><i>Evitar causar daño (no maleficencia)</i></li>
+                                        <li><i>Garantizar justicia en la distribución de recursos</i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artículos Destacados -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Artículos Destacados</h2>
+
+                <div class="row">
+                    <!-- Artículo 1: -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h5>Manejo del Estrés Laboral:</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><b>Estrategias efectivas para manejar el estrés en entornos médicos de alta presión, manteniendo la calidad de atención.</b></p>
+                                <ul>
+                                    <li><i>Buena alimentacion y horario del sueño</i></li>
+                                    <li><i>Gestión del tiempo</i></li>
+                                    <li><i>Apoyo entre colegas</i></li>
+                                    <li><i>Equilibrio trabajo-vida personal</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 2: -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h5>Actualización Continua:</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><b>La importancia de la educación médica continua en la era de la medicina basada en evidencia.</b></p>
+                                <ul>
+                                    <li><i>Revistas médicas especializadas</i></li>
+                                    <li><i>Congresos y juntas medicas</i></li>
+                                    <li><i>Cursos de actualización</i></li>
+                                    <li><i>Investigación clínica</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 3: -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h5>Trabajo en Equipo:</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><b>Estrategias para una colaboración efectiva entre diferentes profesionales de la salud.</b></p>
+                                <ul>
+                                    <li><i>Comunicación interdisciplinaria</i></li>
+                                    <li><i>Roles y responsabilidades claras</i></li>
+                                    <li><i>Reuniones de equipo efectivas</i></li>
+                                    <li><i>Resolución de conflictos</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Pie de pagina web, muestra informacion de derechos de autor y señala contactos directos -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cuidado Vital CR:</h5>
+                        <p>Información médica confiable para profesionales de la salud y pacientes en Costa Rica.</p>
+                        <p>Síguenos en:</p>
+                        <div>  <!-- Trae iconos de redes sociales de ejemplo: -->
+                            <a href="#" class="mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Enlaces Rápidos:</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">Información Médica</a></li>
+                            <li><a href="formulario.html">Servicios</a></li>
+                            <li><a href="articulos.html">Consejos Profecionales</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacto:</h5>
+                        <address>  <!-- Informacion ficticia para ejemplificar la funcionalidad de la pagina: -->
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> Aluejuela, Costa Rica</p>
+                            <p><i class="fas fa-phone mr-2"></i> +506 2222-2222</p>
+                            <p><i class="fas fa-envelope mr-2"></i> sebas@cuidadovitalcr.com</p>
+                        </address>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">  <!-- Legitima legalmente la pagina para evitar plagios: -->
+                    <p>&copy; 2025 Cuidado Vital CR. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Importacion de scripts de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

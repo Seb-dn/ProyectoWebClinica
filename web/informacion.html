@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Información Médica - Cuidado Vital CR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Importamos las herramientas de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Se agrega el diseño general CSS de la pagina web: -->
+        <style>
+            :root {
+                --primary-color: #2c80b9;
+                --secondary-color: #f8f9fa;
+                --accent-color: #28a745;
+                --text-color: #333;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+                padding-top: 76px; /* Para compensar la navbar fija */
+            }
+
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            header {
+                background: linear-gradient(135deg, var(--primary-color), #1a5a8a);
+                padding: 3rem 0 !important;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                margin-bottom: 20px;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card-header {
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: bold;
+            }
+
+            .table-responsive {
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .table th {
+                background-color: var(--primary-color);
+                color: white;
+                border: none;
+            }
+
+            .table-hover tbody tr:hover {
+                background-color: rgba(44, 128, 185, 0.1);
+            }
+
+            .search-container {
+                background-color: var(--secondary-color);
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 30px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .footer {
+                background-color: #343a40;
+                color: white;
+                padding: 40px 0;
+                margin-top: 50px;
+            }
+
+            .footer a {
+                color: #ddd;
+            }
+
+            .footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+            }
+
+            .stat-card {
+                text-align: center;
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            @media (max-width: 768px) {
+                .table-responsive {
+                    font-size: 0.9rem;
+                }
+
+                header h1 {
+                    font-size: 1.8rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar: Herramientas de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heartbeat mr-2"></i>Cuidado Vital CR
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="informacion.html">Información Médica</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos Profecionales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado: -->
+        <header class="bg-primary text-white text-center py-4">
+            <div class="container">
+                <h1 class="display-4">Enfermedades Frecuentes en Costa Rica</h1>
+                <p class="lead">Guía completa de síntomas, causas y cuidados enfermeros para profesionales del area del salud</p>
+                <a href="#tabla-enfermedades" class="btn btn-light btn-lg mt-3">Ver Enfermedades</a>
+            </div>
+        </header>
+        <br>
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <img src="virus.jpg" alt="Virus" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas: Visualiza las enfermedades mas frecuentes en el caso de Costa Rica -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">25%</div>
+                            <div class="stat-label"> <p><b>Prevalencia de Hipertensión</div> </b> 
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">10%</div>
+                            <div class="stat-label"> <p><b>Prevalencia de Diabetes</div> </b>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label"> <p><b> Casos de Dengue Anuales</div> </b>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">15%</div>
+                            <div class="stat-label"> <p><b>Aumento en Enfermedades Crónicas</div> </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenedor principal -->
+        <div class="container my-5">
+            <!-- Búsqueda y filtros -->
+            <div class="search-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" id="search-input" class="form-control" placeholder="Buscar enfermedad, síntoma o tratamiento...">
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filter-select" class="form-control">
+                            <option value="">Todas las enfermedades</option>
+                            <option value="Dengue">Dengue</option>
+                            <option value="Hipertensión">Hipertensión</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Infecciones">Infecciones</option>
+                            <option value="Enfermedades Diarreicas">Enfermedades Diarreicas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de enfermedades -->
+            <h3 id="tabla-enfermedades" class="mb-4 text-center">Tabla de Enfermedades y Cuidados de Enfermería</h3>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="enfermedades-table">
+                    <thead class="thead-dark">
+                        <tr> 
+                            <th>Enfermedades:</th>
+                            <th>Síntomas Comunes:</th>
+                            <th>Tratamiento General:</th>
+                            <th>Rol de Enfermería:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Dengue</b></td>
+                            <td>Fiebre alta, dolor muscular, sarpullido, dolor detrás de los ojos</td>
+                            <td>Hidratación oral/IV, control de fiebre, observación</td>
+                            <td>Monitoreo de signos vitales, educación sobre signos de alarma</td>
+                        </tr>
+                        <tr>
+                            <td><b>Hipertensión</b></td>
+                            <td>Dolor de cabeza, mareos, visión borrosa, muchas veces asintomática</td>
+                            <td>Antihipertensivos, dieta baja en sodio, control corporal</td>
+                            <td>Tomar presión arterial, educar sobre dieta y medicación</td>
+                        </tr>
+                        <tr>
+                            <td><b>Diabetes Mellitus Tipo 2</b></td>
+                            <td>Poliuria, polidipsia, cansancio, visión borrosa</td>
+                            <td>Insulina o hipoglucemiantes, control glucémico</td>
+                            <td>Aplicación de insulina, educación sobre monitoreo de glucosa</td>
+                        </tr>
+                        <tr>
+                            <td><b>Infecciones Respiratorias</b></td>
+                            <td>Tos, fiebre, dificultad para respirar, congestión nasal</td>
+                            <td>Antibióticos (si es bacteriana), sintomáticos, reposo</td>
+                            <td>Monitoreo respiratorio, administración de medicamentos, educación sobre prevención</td>
+                        </tr>
+                        <tr>
+                            <td><b>Enfermedades Diarreicas</b></td>
+                            <td>Diarrea, dolor abdominal, fiebre, deshidratación</td>
+                            <td>Hidratación, dieta astringente, probióticos</td>
+                            <td>Control de hidratación, educación sobre higiene alimentaria</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Información adicional: Seccion con recursos adicionales y contenido extra -->
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <i class="fas fa-book-medical feature-icon"></i>
+                            <h5>Control de Epidemias:</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><b>Comunicación con las comunidades para la regulación del brote o epidemia</b></li>
+                                <li class="list-group-item"><b>Campañas sanitarias en las comunidades o zonas afectas por un virus o brote</b></li>
+                                <li class="list-group-item"><b>Seguir protocolos de bioseguridad como el lavado de manos frecuente y la limpieza adecuada de los alimentos</b></li>
+                                <li class="list-group-item"><b>Informase mediante medios oficiales como la OMS y monitoriar avances cientificos contra la transmision de enfermedades</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <i class="fas fa-stethoscope feature-icon"></i>
+                            <h5>Consejos para Profesionales:</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><b>Mantener actualizados los registros de pacientes y usar servicios modernos</b></li>
+                                <li class="list-group-item"><b>Educar a los pacientes sobre prevención y un estilo de vida mas saludable</b></li>
+                                <li class="list-group-item"><b>Insentivar a la poblacion para citas frecuentes y analisis clinicos para la prevencion de enfermedades</b></li>
+                                <li class="list-group-item"><b>Analizar el historial clinico y familiar de los pacientes para una alerta temprana de alguna enfermedad</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <i class="fas fa-phone-alt feature-icon"></i>
+                            <h5>Contacto de Emergencia:</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p><b>En caso de emergencia médica:</b></p>
+                            <h4 class="text-danger">911</h4>
+                            <p><b>Línea de información del Ministerio de Salud:</b></p>
+                            <h5>+506 4003 5000</h5>
+                            <a href="contacto.html" class="btn btn-primary mt-3">Más información de contacto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer: Seccion de contacto y autenticidad de la pagina -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cuidado Vital CR:</h5>
+                        <p>Información médica confiable para profesionales de la salud y pacientes en Costa Rica.</p>
+                        <p>Síguenos en:</p>
+                        <div>         <!-- Footer: traemos los iconos de redes sociales -->
+                            <a href="#" class="mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Enlaces Rápidos:</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">Información Médica</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="consejos.html">Consejos Profecionales</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacto:</h5>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> Alajuela, Costa Rica</p>
+                            <p><i class="fas fa-phone mr-2"></i> +506 2222-2222</p>
+                            <p><i class="fas fa-envelope mr-2"></i> sebas@cuidadovitalcr.com</p>
+                        </address>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center"> 
+                    <p>&copy; 2025 Cuidado Vital CR. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+         <!-- Exportar los crips de bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Funcionalidad de búsqueda y filtrado
+            $(document).ready(function () {
+                // Filtrado por selección
+                $('#filter-select').change(function () {
+                    var filterValue = $(this).val().toLowerCase();
+                    $('#enfermedades-table tbody tr').filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(filterValue) > -1);
+                    });
+                });
+
+                // Búsqueda en tiempo real
+                $('#search-input').on('keyup', function () {
+                    var value = $(this).val().toLowerCase();
+                    $('#enfermedades-table tbody tr').filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Cuidado Vital CR</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sitio web educativo para estudiantes de medicina con información sobre conceptos fundamentales del área de la salud">
+         <!-- Exportar los links de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Establecer el diseño general de la pagina y su estilo mediante CSS dentro del head -->
+        <style>
+            :root {
+                --primary-color: #2c80b9;
+                --secondary-color: #f8f9fa;
+                --accent-color: #28a745;
+                --text-color: #333;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+                background-color: #f8f9fa;
+                padding-top: 76px; /* Para compensar la navbar fija */
+            }
+
+            .navbar {
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: var(--primary-color) !important;
+            }
+
+            .header {
+                background: linear-gradient(135deg, var(--primary-color), #1a5a8a);
+                color: white;
+                padding: 3rem 0 !important;
+                margin-bottom: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-alt {
+                background-color: #e9ecef;
+            }
+
+            .concept-card {
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                margin-bottom: 1.5rem;
+                transition: transform 0.3s;
+                border: none;
+            }
+
+            .concept-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .system-card {
+                border-left: 4px solid var(--primary-color);
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s;
+            }
+
+            .system-card:hover {
+                transform: translateY(-5px);
+            }
+
+            footer {
+                background-color: #343a40;
+                color: white;
+                padding: 2rem 0;
+                margin-top: 2rem;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                margin-bottom: 20px;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 15px;
+            }
+
+            .footer {
+                background-color: #343a40;
+                color: white;
+                padding: 40px 0;
+                margin-top: 50px;
+            }
+
+            .footer a {
+                color: #ddd;
+            }
+
+            .footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar: barra de navegacion, permite desplazarse en diferentes pestañas del sitio y establece el diseño del mismo -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-heartbeat mr-2"></i>Cuidado Vital CR
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="informacion.html">Información Médica</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos Profecionales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header: es una etiqueta que define el contenido o navegacion de una seccion especifica -->
+        <header class="header text-center">
+            <div class="container">
+                <h1 class="display-4">Cuidado Vital CR</h1>
+                <p class="lead">Recursos educativos para estudiantes de medicina de Costa Rica</p>
+                <a href="#conceptos-basicos" class="btn btn-light btn-lg mt-3">Explorar Conceptos</a>
+            </div>
+        </header>
+
+        <!-- Primera sección: Imagen principal -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <img src="cirugia.jpg.jpg" alt="Procedimiento médico" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segunda sección: Introducción -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2 class="text-center mb-4">Introducción: ¿Cuál es el objetivo del sitio web?</h2>
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <p><b>
+                                        Bienvenidos a nuestro sitio web "Cuidado Vital CR", el objetivo es apoyar a los estudiantes del área de medicina mediante información educativa básica sobre conceptos fundamentales que una persona dedica en esta área 
+                                        debería manejar por ello ofrecemos contenido y herramientas las cuales te permitirán una mejor compresión del área de la medicina. 
+                                        Los médicos y profesionales de la salud deben manejar adecuadamente información básica como el cuidado de los pacientes, enfermedades mas habituales y su debido tratamiento por ello el sitio web ofrece herramientas e información 
+                                        para dar una orientación profesional basada en la empatía, ciencia y de carácter educativo.
+                                    </b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tercera sección: Conceptos Básicos -->
+        <section id="conceptos-basicos" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5">Conceptos Básicos</h2>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-8">
+                        <img src="laboratorio.jpg" alt="Laboratorio médico" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card concept-card p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-balance-scale feature-icon"></i>
+                                <h4>Homeostasis</h4>
+                                <br>
+                                <p><b>La homeostasis es la capacidad del organismo para mantener un medio interno constante y estable, a pesar de los cambios en el entorno externo. Es el principio fundamental de la fisiología.</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card concept-card p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-cogs feature-icon"></i>
+                                <h4>Estructura-Función</h4>
+                                <br>
+                                <p><b>Este concepto establece que la estructura de una célula, tejido u órgano determina inevitablemente su función, y viceversa. La forma y la función son inseparables.</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card concept-card p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-dna feature-icon"></i>
+                                <h4>Etiología y Patogenia</h4>
+                                <br>
+                                <p><b>La etiología es la causa de una enfermedad (el "quién" o "qué"). Puede ser genética, infecciosa, tóxica y traumática. La patogenia es la secuencia de eventos desde la causa inicial hasta la manifestación de la enfermedad (el "cómo").</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuarta sección: Temas Principales -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="text-center mb-5">Temas Principales: Cuerpo Humano</h2>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-8">
+                        <img src="cuerpoHumano.jpg" alt="Anatomía del cuerpo humano" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card system-card p-3">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-brain mr-2"></i>Sistema Nervioso:</h4>
+                                <br>
+                                <ul> 
+                                    <li><i>Encéfalo</i></li>
+                                    <li><i>Médula espinal</i></li>
+                                    <li><i>Nervios periféricos</i></li>
+                                    <li><i>Órganos sensoriales (ojos, oídos, piel, entre otras.)</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card system-card p-3">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-seedling mr-2"></i>Sistema Endocrino:</h4>
+                                <br>
+                                <ul>
+                                    <li><i>Glándula pituitaria</i></li>
+                                    <li><i>Glándula tiroides</i></li>
+                                    <li><i>Glándulas suprarrenales</i></li>
+                                    <li><i>Páncreas</i></li>
+                                    <li><i>Ovarios</i></li>
+                                    <li><i>Testículos</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card system-card p-3">
+                            <div class="card-body">
+                                <h4 class="text-center"><i class="fas fa-heartbeat mr-2"></i>Sistema Cardiovascular:</h4>
+                                <br>
+                                <ul>
+                                    <li><i>Corazón</i></li>
+                                    <li><i>Sangre</i></li>
+                                    <li><i>Vasos sanguíneos (arterias, venas, capilares)</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer: Pie de pagina web, muestra informacion de derechos de autor y señala contactos directos -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Cuidado Vital CR:</h5>
+                        <p>Información médica confiable para profesionales de la salud y pacientes en Costa Rica.</p>
+                        <p>Síguenos en:</p>
+                        <div>  <!-- Trae iconos de redes sociales de ejemplo: -->
+                            <a href="#" class="mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Enlaces Rápidos:</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">Información Médica</a></li>
+                            <li><a href="formulario.html">Servicios</a></li>
+                            <li><a href="articulos.html">Consejos Profecionales</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacto:</h5>
+                        <address>  <!-- Informacion ficticia para ejemplificar la funcionalidad de la pagina: -->
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> Aluejuela, Costa Rica</p>
+                            <p><i class="fas fa-phone mr-2"></i> +506 2222-2222</p>
+                            <p><i class="fas fa-envelope mr-2"></i> sebas@cuidadovitalcr.com</p>
+                        </address>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">  <!-- Legitima legalmente la pagina para evitar plagios: -->
+                    <p>&copy; 2025 Cuidado Vital CR. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Importacion de scripts de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
